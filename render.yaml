@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: delvin-stock-screener
+    runtime: python
+    plan: free
+    buildCommand: "python --version"
+    startCommand: "python stock_screener_app_rebuilt.py"
+    healthCheckPath: /health
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
